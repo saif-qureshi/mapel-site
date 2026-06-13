@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maple Leaf Corporation - ERP System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#fef2f2",
+                100: "#fee2e2",
+                200: "#fecaca",
+                300: "#fca5a5",
+                400: "#f87171",
+                500: "#ef4444",
+                600: "#dc2626",
+                700: "#b91c1c",
+                800: "#991b1b",
+                900: "#7f1d1d",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hover-lift:hover {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased bg-white">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="assets/logo.png"
+              alt="Maple Leaf Corporation"
+              class="h-[6.5rem]"
+            />
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#features"
+              class="text-gray-600 hover:text-gray-900 text-sm font-medium transition"
+              >Features</a
+            >
+            <a
+              href="#benefits"
+              class="text-gray-600 hover:text-gray-900 text-sm font-medium transition"
+              >Benefits</a
+            >
+            <a
+              href="pricing.html"
+              class="text-gray-600 hover:text-gray-900 text-sm font-medium transition"
+              >Pricing</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-600 hover:text-gray-900 text-sm font-medium transition"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Right Side -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a
+              href="https://app.mapleleafcorporation.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary-600 hover:text-primary-700 font-medium text-sm transition"
+              >Login</a
+            >
+            <a
+              href="contact.html"
+              class="bg-primary-600 text-white px-5 py-2 rounded-lg font-medium text-sm hover:bg-primary-700 transition"
+            >
+              Get started
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="px-4 py-4 space-y-3">
+          <a
+            href="#features"
+            class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >Features</a
+          >
+          <a
+            href="#benefits"
+            class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >Benefits</a
+          >
+          <a
+            href="pricing.html"
+            class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >Pricing</a
+          >
+          <a
+            href="contact.html"
+            class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >Contact</a
+          >
+          <a
+            href="https://app.mapleleafcorporation.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-primary-600 hover:text-primary-700 font-medium text-sm"
+            >Login</a
+          >
+          <a
+            href="contact.html"
+            class="w-full bg-primary-600 text-white px-5 py-2 rounded-lg font-medium text-sm hover:bg-primary-700 transition block text-center"
+          >
+            Get started
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-br from-gray-50 to-gray-100 pt-20 pb-12 md:pt-28 md:pb-16 md:min-h-screen flex items-center"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="text-center mb-6 md:mb-12">
+          <h1
+            class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 md:mb-6 leading-tight max-w-4xl mx-auto px-2"
+          >
+            Accelerate business growth through smart ERP solutions with Maple
+            Leaf ERP.
+          </h1>
+          <p
+            class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 md:mb-8 leading-relaxed max-w-2xl mx-auto px-2"
+          >
+            Track, analyze, and report sales effortlessly with a dashboard built
+            for business professionals.
+          </p>
+
+          <!-- Email Input -->
+          <div
+            class="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center max-w-xl mx-auto mb-8 md:mb-12 px-2"
+          >
+            <a
+              href="contact.html"
+              class="w-full sm:w-auto bg-primary-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg font-medium text-sm sm:text-base hover:bg-primary-700 transition whitespace-nowrap"
+            >
+              Contact Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Dashboard Preview -->
+        <div class="relative max-w-5xl mx-auto px-2">
+          <div
+            class="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <div
+              class="bg-white rounded-t-xl md:rounded-t-2xl p-2 md:p-3 border-b border-gray-200"
+            >
+              <div class="flex items-center gap-2">
+                <div class="flex gap-1 md:gap-1.5">
+                  <div
+                    class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-400"
+                  ></div>
+                  <div
+                    class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-400"
+                  ></div>
+                  <div
+                    class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-400"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white">
+              <img
+                src="assets/dashboard.jpg"
+                alt="Dashboard Preview"
+                class="w-full h-auto shadow-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 md:py-20 bg-white" id="features">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-6 md:gap-16 items-center">
+          <!-- Left - Features List -->
+          <div
+            class="space-y-3 md:space-y-4 bg-gradient-to-br from-primary-50 via-red-50 to-orange-50 p-4 md:p-8 rounded-2xl md:rounded-3xl"
+          >
+            <div
+              class="bg-white p-4 md:p-8 rounded-xl md:rounded-2xl shadow-sm border border-gray-100"
+            >
+              <div class="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-primary-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                  >
+                    Sales Management
+                  </h3>
+                  <p class="text-gray-500 text-xs md:text-sm mb-2 md:mb-3">
+                    Track and manage your entire sales process. Gain real-time
+                    insights into sales performance and customer behavior.
+                  </p>
+                  <a
+                    href="contact.html?message=I'd like to learn more about Sales Management features."
+                    class="text-primary-600 hover:text-purple-700 text-xs md:text-sm font-medium inline-flex items-center gap-1"
+                  >
+                    Learn more
+                    <svg
+                      class="w-3 h-3 md:w-4 md:h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-gradient-to-br from-primary-50 via-red-50 to-orange-50 p-4 md:p-8 rounded-xl md:rounded-2xl"
+            >
+              <div class="flex items-start gap-3 md:gap-4">
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-primary-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                  >
+                    Reporting & Analytics
+                  </h3>
+                  <p class="text-gray-500 text-xs md:text-sm">
+                    Access detailed reports and visual dashboards to analyze
+                    sales trends, team performance, and business KPIs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-gradient-to-br from-primary-50 via-red-50 to-orange-50 p-4 md:p-8 rounded-xl md:rounded-2xl"
+            >
+              <div class="flex items-start gap-3 md:gap-4">
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-primary-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                  >
+                    Customer Management (CRM)
+                  </h3>
+                  <p class="text-gray-500 text-xs md:text-sm">
+                    Store and manage customer data, improve customer
+                    interactions, and boost retention through integrated CRM
+                    tools.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right - Content -->
+          <div class="mt-6 lg:mt-0">
+            <h2
+              class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-6 leading-tight"
+            >
+              Get to Know the Tools That Drive Results
+            </h2>
+            <p
+              class="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed"
+            >
+              Stand up your contact-centric cell notes, and even understand one
+              to one place, live changes and prioritize your sales leads.
+            </p>
+            <a
+              href="contact.html?message=I'd like to learn more about your tools and features."
+              class="text-primary-600 hover:text-primary-700 text-sm md:text-base font-medium inline-flex items-center gap-2 border-2 border-primary-600 px-3 md:px-4 py-2 rounded-lg w-max"
+            >
+              Learn more
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Know Your Buyer Section -->
+    <section class="py-12 md:py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-6 md:gap-16 items-center">
+          <!-- Left - Content -->
+          <div>
+            <h2
+              class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-6 leading-tight"
+            >
+              Smart Business Starts with Knowing Your Buyer.
+            </h2>
+            <p
+              class="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed"
+            >
+              Wrangle your sales numbers without breaking a sweat!
+            </p>
+            <a
+              href="contact.html?message=I'd like to learn more about customer insights and buyer analytics."
+              class="text-primary-600 hover:text-primary-700 text-sm md:text-base font-medium inline-flex items-center gap-2 border-2 border-primary-600 px-3 md:px-4 py-2 rounded-lg w-max"
+            >
+              Learn more
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right - Dashboard Cards -->
+          <div
+            class="relative bg-gradient-to-br from-primary-50 via-red-50 to-orange-50 p-6 md:p-12 rounded-2xl md:rounded-3xl min-h-[350px] md:min-h-[500px] flex items-center justify-center mt-6 lg:mt-0"
+          >
+            <!-- Top Right Card -->
+            <div
+              class="absolute top-4 md:top-8 right-4 md:right-8 bg-white rounded-lg md:rounded-xl shadow-2xl  transform rotate-3 hover:rotate-0 transition-transform w-32 md:w-48 z-10"
+            >
+              <img
+                src="assets/total-sale.jpg"
+                alt="Sales Report"
+                class="w-full h-auto rounded-md md:rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Center Card -->
+            <div
+              class="bg-white rounded-lg md:rounded-xl shadow-2xl  transform hover:scale-105 transition-transform w-40 md:w-56 z-20"
+            >
+              <img
+                src="assets/purchase.jpg"
+                alt="Main Dashboard"
+                class="w-full h-auto rounded-md md:rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Bottom Left Card -->
+            <div
+              class="absolute bottom-4 md:bottom-8 left-4 md:left-8 bg-white rounded-lg md:rounded-xl shadow-2xl  transform -rotate-3 hover:rotate-0 transition-transform w-32 md:w-48 z-10"
+            >
+              <img
+                src="assets/balance.jpg"
+                alt="Analytics Chart"
+                class="w-full h-auto rounded-md md:rounded-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-12 md:py-20 bg-white" id="benefits">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8 md:mb-16">
+          <h2
+            class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 px-4"
+          >
+            Meet your business’s new best friend: Maple Leaf ERP!
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 md:gap-16 items-center">
+          <!-- Left - Checklist -->
+          <div class="space-y-4 md:space-y-6">
+            <div class="flex items-start gap-3 md:gap-4">
+              <div
+                class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5 md:mt-1"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                >
+                  Works as CRM
+                </h3>
+                <p class="text-sm md:text-base text-gray-600">
+                  Effortlessly manage customer relationships and track every
+                  interaction in one seamless system.
+                  <br />
+                  Stay connected. Build loyalty.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 md:gap-4">
+              <div
+                class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5 md:mt-1"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                >
+                  Single Source of Truth
+                </h3>
+                <p class="text-sm md:text-base text-gray-600">
+                  Centralize all your business data on one platform for smarter,
+                  faster decisions. One platform. Total clarity.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 md:gap-4">
+              <div
+                class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5 md:mt-1"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                >
+                  Fast Time to Value
+                </h3>
+                <p class="text-sm md:text-base text-gray-600">
+                  Get started quickly with an intuitive setup — and start seeing
+                  ROI sooner. Quick setup. Fast results.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 md:gap-4">
+              <div
+                class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5 md:mt-1"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                >
+                  Scalable and Flexible
+                </h3>
+                <p class="text-sm md:text-base text-gray-600">
+                  Grow without limits — our platform scales and adapts as your
+                  business evolves. Built to grow with you.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 md:gap-4">
+              <div
+                class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5 md:mt-1"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  class="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2"
+                >
+                  Trailblazer Success and Community
+                </h3>
+                <p class="text-sm md:text-base text-gray-600">
+                  Join a vibrant community and unlock resources designed to fuel
+                  your growth. Connect. Learn. Succeed.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right - Dashboard Preview -->
+          <div
+            class="relative bg-gradient-to-br from-primary-50 via-red-50 to-orange-50 p-6 md:p-12 lg:p-24 rounded-full mt-6 lg:mt-0"
+          >
+            <div
+              class="bg-white rounded-xl md:rounded-2xl shadow-xl transform rotate-3 scale-110"
+            >
+              <img
+                src="assets/analytics.jpg"  
+                alt="Analytics Dashboard"
+                class="w-full h-auto rounded-lg md:rounded-xl object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-12 md:py-20 bg-gray-50" id="pricing">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8 md:mb-16 px-4">
+          <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-4">
+            Plan & Pricing
+          </h2>
+          <p class="text-sm md:text-lg text-gray-600">
+            Straightforward plans. Honest pricing. Designed for your success.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto"
+        >
+          <!-- Basic Plan -->
+          <div
+            class="bg-white border-2 border-gray-200 p-5 md:p-8 rounded-xl md:rounded-2xl hover-lift"
+          >
+            <div class="mb-4 md:mb-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                Basic
+              </h3>
+              <div class="flex items-baseline mb-3 md:mb-4">
+                <span class="text-3xl md:text-4xl font-bold text-gray-900"
+                  >PKR 2,500</span
+                >
+                <span class="text-sm md:text-base text-gray-600 ml-2"
+                  >/month</span
+                >
+              </div>
+              <p class="text-xs md:text-sm text-gray-600">
+                Perfect for startups and small businesses getting started with
+                sales management.
+              </p>
+            </div>
+            <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm text-gray-600"
+                  >Manage sales data and reports</span
+                >
+              </li>
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm text-gray-600"
+                  >Basic CRM functionality</span
+                >
+              </li>
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm text-gray-600"
+                  >Standard support</span
+                >
+              </li>
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm text-gray-600"
+                  >Cloud access</span
+                >
+              </li>
+              <li class="flex items-start gap-3 pt-2">
+                <span class="text-sm md:text-base text-black font-semibold">
+                  Ideal if:
+                  <span class="block font-normal text-gray-600 mt-1">
+                    You're just starting out and need essential sales tracking
+                    tools.
+                  </span>
+                </span>
+              </li>
+            </ul>
+
+            <button
+              class="w-full border-2 border-primary-600 text-primary-600 py-2.5 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-primary-50 transition"
+            >
+              Choose Plan
+            </button>
+          </div>
+
+          <!-- Professional Plan - Popular -->
+          <div
+            class="bg-primary-600 text-white p-5 md:p-8 rounded-xl md:rounded-2xl hover-lift relative md:transform md:scale-105"
+          >
+            <div
+              class="absolute top-0 right-0 bg-gray-900 text-white px-3 md:px-4 py-1 rounded-bl-lg rounded-tr-xl md:rounded-tr-2xl text-xs md:text-sm font-bold"
+            >
+              Popular
+            </div>
+            <div class="mb-4 md:mb-6 mt-6 md:mt-0">
+              <h3 class="text-lg md:text-xl font-bold mb-2">Pro</h3>
+              <div class="flex items-baseline mb-3 md:mb-4">
+                <span class="text-3xl md:text-4xl font-bold">PKR 5,000</span>
+                <span class="text-sm md:text-base text-primary-100 ml-2"
+                  >/month</span
+                >
+              </div>
+              <p class="text-xs md:text-sm text-primary-100">
+                For growing businesses looking for advanced features and better
+                insights.
+              </p>
+            </div>
+            <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-white flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm">Everything in Basic Plus</span>
+              </li>
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-white flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm"
+                  >Advanced reporting & analytics
+                </span>
+              </li>
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-white flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm">Inventory management</span>
+              </li>
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-white flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm">Workflow automation</span>
+              </li>
+              <li class="flex items-center gap-2 md:gap-3">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 text-white flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-xs md:text-sm">Priority support</span>
+              </li>
+              <li class="flex items-start gap-3 pt-2">
+                <span class="text-sm md:text-base text-white font-semibold">
+                  Ideal if:
+                  <span class="block font-normal text-white mt-1">
+                    You need deeper insights and automation to scale your sales
+                  </span>
+                </span>
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gray-900 text-white py-2.5 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-gray-800 transition"
+            >
+              Choose Plan
+            </button>
+          </div>
+
+          <!-- Advanced Plan -->
+          <div
+            class="bg-white border-2 border-gray-200 p-6 md:p-8 rounded-xl md:rounded-2xl hover-lift"
+          >
+            <div class="mb-6">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                Enterprise
+              </h3>
+              <div class="flex items-baseline mb-4">
+                <span class="text-2xl md:text-3xl font-bold text-gray-900"
+                  >Custom Pricing</span
+                >
+              </div>
+              <p class="text-sm md:text-base text-gray-600">
+                Tailored solutions for large businesses with complex needs.
+              </p>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-sm md:text-base text-gray-600"
+                  >All Pro features</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-sm md:text-base text-gray-600"
+                  >Dedicated account manager</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-sm md:text-base text-gray-600">
+                  Custom integrations
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-sm md:text-base text-gray-600"
+                  >Enhanced security & compliance</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-gray-400 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-sm md:text-base text-gray-600"
+                  >24/7 premium support
+                </span>
+              </li>
+              <li class="flex items-start gap-3 pt-2">
+                <span class="text-sm md:text-base text-black font-semibold">
+                  Ideal if:
+                  <span class="block font-normal text-gray-600 mt-1">
+                    You require a scalable, customizable ERP with top-tier
+                    support.
+                  </span>
+                </span>
+              </li>
+            </ul>
+            <button
+              class="w-full border-2 border-primary-600 text-primary-600 py-3 rounded-lg text-base font-semibold hover:bg-primary-50 transition"
+            >
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 md:py-12" id="contact">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8"
+        >
+          <div class="col-span-2 md:col-span-1">
+            <img
+              src="assets/logo.png"
+              alt="Maple Leaf Corporation"
+              class="h-10 md:h-12 mb-3 md:mb-4 brightness-0 invert"
+            />
+            <p class="text-xs md:text-sm text-gray-400">
+              Complete ERP solution for modern businesses.
+            </p>
+          </div>
+
+          <div>
+            <h3
+              class="text-white text-sm md:text-base font-semibold mb-3 md:mb-4"
+            >
+              Product
+            </h3>
+            <ul class="space-y-2 text-xs md:text-sm">
+              <li>
+                <a href="#features" class="hover:text-white transition"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#pricing" class="hover:text-white transition"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Integrations</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">FBR Integration</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3
+              class="text-white text-sm md:text-base font-semibold mb-3 md:mb-4"
+            >
+              Company
+            </h3>
+            <ul class="space-y-2 text-xs md:text-sm">
+              <li><a href="#" class="hover:text-white transition">About</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition">Careers</a>
+              </li>
+              <li><a href="#" class="hover:text-white transition">Blog</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3
+              class="text-white text-sm md:text-base font-semibold mb-3 md:mb-4"
+            >
+              Support
+            </h3>
+            <ul class="space-y-2 text-xs md:text-sm">
+              <li>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-6 md:pt-8">
+          <p class="text-xs md:text-sm text-gray-400 text-center">
+            © 2025 Maple Leaf Corporation. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Chat Bubble -->
+    <a
+      href="https://wa.me/923320003527?text=Hello!%20I'm%20interested%20in%20learning%20more%20about%20Maple%20Leaf%20ERP."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 z-50 group"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg
+        class="w-6 h-6 md:w-8 md:h-8"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        />
+      </svg>
+      <span
+        class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      >
+        Chat with us on WhatsApp
+      </span>
+    </a>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
