@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - Maple Leaf Corporation</title>
+    <title>Contact Maple Leaf ERP | FBR Digital Invoicing &amp; Demos</title>
+    <meta
+      name="description"
+      content="Get in touch with Maple Leaf ERP. Book an FBR digital invoicing demo, ask about pricing, or reach our support team in Karachi, Pakistan."
+    />
+    <link rel="canonical" href="https://mapleleafcorporation.com/contact.html" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -81,6 +86,11 @@
               >Benefits</a
             >
             <a
+              href="fbr-integration.html"
+              class="text-gray-600 hover:text-gray-900 text-sm font-medium transition"
+              >FBR Invoicing</a
+            >
+            <a
               href="pricing.html"
               class="text-gray-600 hover:text-gray-900 text-sm font-medium transition"
               >Pricing</a
@@ -140,6 +150,11 @@
             href="index.html#benefits"
             class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
             >Benefits</a
+          >
+          <a
+            href="fbr-integration.html"
+            class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >FBR Invoicing</a
           >
           <a
             href="pricing.html"
@@ -245,6 +260,30 @@
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   required
                 />
+              </div>
+
+              <!-- Inquiry Type -->
+              <div>
+                <label
+                  for="inquiry-type"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  What can we help you with?
+                </label>
+                <select
+                  id="inquiry-type"
+                  name="inquiry_type"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                >
+                  <option value="">Select an option</option>
+                  <option value="FBR digital invoicing integration">
+                    FBR digital invoicing integration
+                  </option>
+                  <option value="Book a product demo">Book a product demo</option>
+                  <option value="Pricing &amp; plans">Pricing &amp; plans</option>
+                  <option value="Technical support">Technical support</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
 
               <!-- Message -->
@@ -498,7 +537,9 @@
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition">Integrations</a>
+                <a href="fbr-integration.html" class="hover:text-white transition"
+                  >FBR Digital Invoicing</a
+                >
               </li>
             </ul>
           </div>
@@ -534,7 +575,7 @@
 
         <div class="border-t border-gray-800 pt-8">
           <p class="text-sm text-gray-400 text-center">
-            � 2025 Maple Leaf Corporation. All rights reserved.
+            &copy; 2025 Maple Leaf Corporation. All rights reserved.
           </p>
         </div>
       </div>
@@ -542,7 +583,7 @@
 
     <!-- WhatsApp Chat Bubble -->
     <a
-      href="https://wa.me/923320003527?text=Hello!%20I'm%20interested%20in%20learning%20more%20about%20Maple%20Leaf%20ERP."
+      href="https://wa.me/923320003527?text=Hello!%20I%20need%20help%20with%20FBR%20digital%20invoicing%20integration%20for%20my%20business."
       target="_blank"
       rel="noopener noreferrer"
       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 z-50 group"
@@ -600,14 +641,19 @@
             const name = document.getElementById("name").value;
             const contact = document.getElementById("contact").value;
             const email = document.getElementById("email").value;
+            const inquiryType = document.getElementById("inquiry-type").value;
             const message = document.getElementById("message").value;
 
             // Create Gmail web compose link that opens in user's own Gmail
             const gmailSubject = encodeURIComponent(
-              "New Contact Form Submission"
+              inquiryType
+                ? `New inquiry: ${inquiryType}`
+                : "New Contact Form Submission"
             );
             const gmailBody = encodeURIComponent(
-              `Hi,\n\n${message}\n\nBest regards,\n${name}\n\nContact Number: ${contact}\nEmail: ${email}`
+              `Hi,\n\n${message}\n\nBest regards,\n${name}\n\nInquiry Type: ${
+                inquiryType || "Not specified"
+              }\nContact Number: ${contact}\nEmail: ${email}`
             );
             const gmailLink = `https://mail.google.com/mail/?view=cm&to=raabta@mapleleafcorporation.com&subject=${gmailSubject}&body=${gmailBody}`;
 

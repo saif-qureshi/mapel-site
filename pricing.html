@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing - Maple Leaf Corporation</title>
+    <title>Pricing — Maple Leaf ERP | FBR-Compliant Plans from PKR 2,500/month</title>
+    <meta
+      name="description"
+      content="FBR digital invoicing included in every Maple Leaf ERP plan. Basic PKR 2,500/mo, Pro PKR 5,000/mo, Enterprise custom. IRN and QR code on every invoice."
+    />
+    <link rel="canonical" href="https://mapleleafcorporation.com/pricing.html" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -81,6 +86,11 @@
               >Benefits</a
             >
             <a
+              href="fbr-integration.html"
+              class="text-gray-600 hover:text-gray-900 text-sm font-medium transition"
+              >FBR Invoicing</a
+            >
+            <a
               href="pricing.html"
               class="text-gray-900 text-sm font-medium transition"
               >Pricing</a
@@ -141,6 +151,11 @@
             class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
             >Benefits</a
           >
+          <a
+            href="fbr-integration.html"
+            class="block text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >FBR Invoicing</a
+          >
           <a href="pricing.html" class="block text-gray-900 text-sm font-medium"
             >Pricing</a
           >
@@ -177,7 +192,8 @@
           Straightforward plans
         </h1>
         <p class="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
-          Honest pricing. Designed for your success.
+          Honest pricing. Designed for your success. FBR digital invoicing
+          included in every plan.
         </p>
       </div>
     </section>
@@ -208,6 +224,24 @@
               </p>
             </div>
             <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-primary-600 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-sm md:text-base font-semibold text-gray-900"
+                  >FBR digital invoicing — IRN &amp; QR on every invoice</span
+                >
+              </li>
               <li class="flex items-center gap-3">
                 <svg
                   class="w-5 h-5 text-gray-400 flex-shrink-0"
@@ -354,6 +388,24 @@
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
+                <span class="text-sm md:text-base font-semibold"
+                  >FBR sales &amp; purchase invoice reporting</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  class="w-5 h-5 text-white flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
                 <span class="text-sm md:text-base"
                   >Advanced reporting & analytics
                 </span>
@@ -463,6 +515,24 @@
               </li>
               <li class="flex items-center gap-3">
                 <svg
+                  class="w-5 h-5 text-primary-600 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span class="text-sm md:text-base font-semibold text-gray-900"
+                  >Dedicated FBR setup &amp; sandbox testing</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
                   class="w-5 h-5 text-gray-400 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
@@ -567,6 +637,71 @@
         </div>
 
         <div class="space-y-4">
+          <!-- FAQ Item — FBR 1 -->
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <button
+              class="faq-toggle w-full flex items-center justify-between text-left"
+              onclick="toggleFAQ(this)"
+            >
+              <h3 class="text-lg font-semibold text-gray-900 pr-4">
+                Does Maple Leaf ERP handle FBR digital invoicing?
+              </h3>
+              <svg
+                class="faq-icon w-6 h-6 text-gray-400 flex-shrink-0 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-content hidden mt-3">
+              <p class="text-gray-600">
+                Yes. Every invoice you create is submitted to FBR's Digital
+                Invoicing system in real time, and the Invoice Reference Number
+                (IRN) and QR code are placed on the invoice automatically — no
+                manual uploads or separate portals.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item — FBR 2 -->
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <button
+              class="faq-toggle w-full flex items-center justify-between text-left"
+              onclick="toggleFAQ(this)"
+            >
+              <h3 class="text-lg font-semibold text-gray-900 pr-4">
+                Which plan includes FBR digital invoicing?
+              </h3>
+              <svg
+                class="faq-icon w-6 h-6 text-gray-400 flex-shrink-0 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-content hidden mt-3">
+              <p class="text-gray-600">
+                All plans include FBR digital invoicing. The Pro plan adds sales
+                and purchase invoice reporting, and Enterprise includes dedicated
+                setup and sandbox testing before go-live.
+              </p>
+            </div>
+          </div>
+
           <!-- FAQ Item 1 -->
           <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
             <button
@@ -772,7 +907,7 @@
             <ul class="space-y-2 text-sm">
               <li>
                 <a
-                  href="index2.html#features"
+                  href="index.html#features"
                   class="hover:text-white transition"
                   >Features</a
                 >
@@ -783,7 +918,9 @@
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition">Integrations</a>
+                <a href="fbr-integration.html" class="hover:text-white transition"
+                  >FBR Digital Invoicing</a
+                >
               </li>
             </ul>
           </div>
@@ -807,7 +944,7 @@
               </li>
               <li>
                 <a
-                  href="index2.html#contact"
+                  href="contact.html"
                   class="hover:text-white transition"
                   >Contact</a
                 >
@@ -821,7 +958,7 @@
 
         <div class="border-t border-gray-800 pt-8">
           <p class="text-sm text-gray-400 text-center">
-            � 2025 Maple Leaf Corporation. All rights reserved.
+            &copy; 2025 Maple Leaf Corporation. All rights reserved.
           </p>
         </div>
       </div>
