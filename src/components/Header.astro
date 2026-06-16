@@ -3,10 +3,10 @@ const { active } = Astro.props;
 
 const items = [
   { href: '/#features', label: 'Features', key: 'features' },
-  { href: '/fbr-integration', label: 'FBR Invoicing', key: 'fbr' },
-  { href: '/pricing', label: 'Pricing', key: 'pricing' },
-  { href: '/contact', label: 'Contact', key: 'contact' },
-  { href: '/pricing#faqs', label: 'FAQs', key: 'faqs' },
+  { href: '/fbr-integration/', label: 'FBR Invoicing', key: 'fbr' },
+  { href: '/pricing/', label: 'Pricing', key: 'pricing' },
+  { href: '/contact/', label: 'Contact', key: 'contact' },
+  { href: '/pricing/#faqs', label: 'FAQs', key: 'faqs' },
 ];
 
 const cls = (key) =>
@@ -45,7 +45,7 @@ const mcls = (key) =>
           >Login</a
         >
         <a
-          href="/contact"
+          href="/contact/"
           class="bg-primary-600 text-white px-5 py-2 rounded-lg font-medium text-sm hover:bg-primary-700 transition"
         >
           Get started
@@ -73,7 +73,7 @@ const mcls = (key) =>
         >Login</a
       >
       <a
-        href="/contact"
+        href="/contact/"
         class="w-full bg-primary-600 text-white px-5 py-2 rounded-lg font-medium text-sm hover:bg-primary-700 transition block text-center"
       >
         Get started
