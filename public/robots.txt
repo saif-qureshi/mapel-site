@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mapleleafcorporation.com/sitemap-index.xml
+Sitemap: https://mapleleafcorporation.com/sitemap.xml
