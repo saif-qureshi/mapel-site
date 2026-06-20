@@ -23,10 +23,23 @@ ssh "$SERVER" "bash -s" <<ENDSSH
   cd "$PROJECT_PATH"
   echo "Pulling latest code..."
   git pull origin $BRANCH
-  echo "Installing dependencies..."
-  npm ci
-  echo "Building static site..."
+  REPO=\$(git remote get-url origin)
+
+  # Build in an isolated clone so the live dist/ keeps serving until the
+  # atomic swap below — zero downtime.
+  echo "Building in isolated clone..."
+  rm -rf /tmp/ml-deploy-build
+  git clone -q --branch $BRANCH --depth 1 "\$REPO" /tmp/ml-deploy-build
+  cd /tmp/ml-deploy-build
+  npm ci --no-audit --no-fund
   npm run build
+
+  echo "Swapping new build into place..."
+  cd "$PROJECT_PATH"
+  rm -rf dist.old dist.new
+  cp -r /tmp/ml-deploy-build/dist dist.new
+  mv dist dist.old && mv dist.new dist
+  rm -rf dist.old /tmp/ml-deploy-build
   echo "Build output ready at ${PROJECT_PATH}dist"
 ENDSSH
 
