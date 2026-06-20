@@ -27,17 +27,17 @@ const description =
 
   <!-- Posts -->
   <section class="py-12 md:py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-5 md:gap-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {
         posts.map((p) => (
           <a
             href={`/blog/${p.slug}/`}
-            class="block bg-white border border-gray-200 rounded-2xl p-6 md:p-8 hover-lift"
+            class="flex flex-col bg-white border border-gray-200 rounded-2xl p-6 hover-lift"
           >
-            <time class="text-xs md:text-sm text-primary-600 font-semibold">{fmt(p.data.pubDate)}</time>
-            <h2 class="text-lg md:text-2xl font-bold text-gray-900 mt-2 mb-2 leading-snug">{p.data.title}</h2>
-            <p class="text-sm md:text-base text-gray-600 leading-relaxed">{p.data.description}</p>
-            <span class="inline-flex items-center gap-1 text-primary-600 font-medium text-sm mt-4">
+            <time class="text-xs text-primary-600 font-semibold">{fmt(p.data.pubDate)}</time>
+            <h2 class="text-base md:text-lg font-bold text-gray-900 mt-2 mb-2 leading-snug line-clamp-3">{p.data.title}</h2>
+            <p class="text-sm text-gray-600 leading-relaxed line-clamp-3">{p.data.description}</p>
+            <span class="inline-flex items-center gap-1 text-primary-600 font-medium text-sm mt-auto pt-4">
               Read more
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
             </span>

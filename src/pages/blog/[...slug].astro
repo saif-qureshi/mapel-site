@@ -27,7 +27,8 @@ const fmt = (d) =>
 
   <!-- Article -->
   <section class="py-10 md:py-16 bg-white">
-    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm md:prose-base max-w-none
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article class="prose prose-sm md:prose-base max-w-none
       prose-headings:font-bold prose-headings:text-gray-900
       prose-h2:text-xl md:prose-h2:text-2xl prose-h2:mt-10
       prose-h3:text-lg prose-h3:mt-6
@@ -38,11 +39,12 @@ const fmt = (d) =>
       prose-td:border-gray-200 prose-th:border-gray-200">
       <Content />
     </article>
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+    <div class="mt-10">
       <a href="/blog/" class="inline-flex items-center gap-1 text-primary-600 font-medium hover:text-primary-700">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
         Back to blog
       </a>
+    </div>
     </div>
   </section>
 </Layout>
