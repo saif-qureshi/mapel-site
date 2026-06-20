@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "About | Maple Leaf Corporation";
+const description =
+  "Maple Leaf Corporation is a Karachi-based technology solutions provider delivering ERP and business management systems for manufacturing, distribution, retail, wholesale, logistics, trading and service industries.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-50 via-red-50 to-orange-50 pt-28 pb-12 md:pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
+        About Maple Leaf Corporation
+      </h1>
+      <p class="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
+        Intelligent ERP and business management solutions that drive efficiency,
+        profitability, and sustainable growth.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 text-sm md:text-base text-gray-600 leading-relaxed">
+      <p>
+        Maple Leaf Corporation is a technology solutions provider helping businesses
+        streamline operations, improve productivity, and accelerate growth through modern
+        ERP and business management systems. Based in Karachi, Pakistan, we specialize in
+        delivering scalable solutions that integrate finance, accounting, inventory, sales,
+        procurement, human resources, and customer management into a single platform.
+      </p>
+      <p>
+        We work closely with organizations across manufacturing, distribution, wholesale,
+        retail, trading, logistics, services, and other growing industries to simplify
+        complex processes, improve visibility, and support data-driven decision-making.
+      </p>
+      <p>
+        Our approach combines industry expertise, innovative technology, and dedicated
+        support to help businesses optimize operations, reduce inefficiencies, and embrace
+        digital transformation with confidence.
+      </p>
+      <p>
+        At Maple Leaf Corporation, our goal is simple: empower businesses with intelligent
+        solutions that drive efficiency, profitability, and sustainable growth.
+      </p>
+
+      <div class="pt-4">
+        <a
+          href="/contact/"
+          class="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-primary-700 transition"
+        >
+          Get in touch
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
