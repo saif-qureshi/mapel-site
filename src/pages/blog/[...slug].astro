@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const fmt = (d) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Layout title={`${post.data.title} | Maple Leaf Corporation`} description={post.data.description}>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-50 via-red-50 to-orange-50 pt-28 pb-10 md:pb-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <time class="text-xs md:text-sm text-primary-600 font-semibold">{fmt(post.data.pubDate)}</time>
+      <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-2 leading-tight">
+        {post.data.title}
+      </h1>
+    </div>
+  </section>
+
+  <!-- Article -->
+  <section class="py-10 md:py-16 bg-white">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm md:prose-base max-w-none
+      prose-headings:font-bold prose-headings:text-gray-900
+      prose-h2:text-xl md:prose-h2:text-2xl prose-h2:mt-10
+      prose-h3:text-lg prose-h3:mt-6
+      prose-p:text-gray-600 prose-li:text-gray-600
+      prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-gray-900
+      prose-table:text-sm prose-th:bg-gray-50 prose-th:text-gray-900
+      prose-td:border-gray-200 prose-th:border-gray-200">
+      <Content />
+    </article>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      <a href="/blog/" class="inline-flex items-center gap-1 text-primary-600 font-medium hover:text-primary-700">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        Back to blog
+      </a>
+    </div>
+  </section>
+</Layout>
