@@ -13,10 +13,35 @@ const {
   ogImage,
   jsonLd,
   whatsappMessage,
+  noindex,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = new URL(ogImage ?? '/og-image.png', Astro.site).href;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Maple Leaf Corporation',
+  alternateName: 'Maple Leaf ERP',
+  url: 'https://mapleleafcorporation.com',
+  logo: 'https://mapleleafcorporation.com/assets/logo.png',
+  image: 'https://mapleleafcorporation.com/og-image.png',
+  description:
+    'FBR-compliant ERP and digital invoicing software for Pakistani businesses.',
+  telephone: '+92-332-0003527',
+  email: 'raabta@mapleleafcorporation.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Suit # F-52, First Floor, Mateen Plaza, Main Tariq Road',
+    addressLocality: 'Karachi',
+    addressCountry: 'PK',
+  },
+  sameAs: [
+    'https://www.facebook.com/profile.php?id=61582122462586',
+    'https://www.instagram.com/mapleleafcorp1',
+  ],
+};
 ---
 
 <!doctype html>
@@ -39,10 +64,13 @@ const ogImageUrl = new URL(ogImage ?? '/og-image.png', Astro.site).href;
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#dc2626" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
 
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:site_name" content="Maple Leaf ERP" />
@@ -68,6 +96,7 @@ const ogImageUrl = new URL(ogImage ?? '/og-image.png', Astro.site).href;
       rel="stylesheet"
     />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
   </head>
   <body class="antialiased bg-white font-sans">
     <Header active={active} />
